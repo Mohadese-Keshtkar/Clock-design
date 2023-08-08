@@ -4,8 +4,8 @@ const second = document.querySelector(".second")
 
 function setDate(){
   const now = new Date();
-  const timezoneOffset = -210; // تفاوت زمانی ایران با گرینویچ به دقیقه
-  const iranTime = new Date(now.getTime() + (timezoneOffset * 60 * 1000)); // محاسبه زمان ایرانی با توجه به تفاوت زمانی
+  const timezoneOffset = -210;
+  const iranTime = new Date(now.getTime() + (timezoneOffset * 60 * 1000));
 
   const getSecond = iranTime.getSeconds();
   const getMinute = iranTime.getMinutes();

@@ -1,23 +1,14 @@
-const hour = document.querySelector(".hour")
-const minute = document.querySelector(".minute")
-const second = document.querySelector(".second")
+let hrs = document.querySelector('#hrs')
+let min = document.querySelector('#min')
+let sec = document.querySelector('#sec')
 
-function setDate(){
-  const now = new Date();
-  const timezoneOffset = -210;
-  const iranTime = new Date(now.getTime() + (timezoneOffset * 60 * 1000));
+setInterval(() => {
 
-  const getSecond = iranTime.getSeconds();
-  const getMinute = iranTime.getMinutes();
-  const getHour = iranTime.getHours();
+  let currentTime = new Date(); //Get the current time
 
-  const secondDegree = (getSecond / 60) * 360;
-  const minuteDegree = (getMinute / 60) * 360;
-  const hourDegree = ((getHour % 12) / 12) * 360;
+  hrs.innerHTML = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours(); //get hours
+  min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes(); //get minute
+  sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds(); //get second
+}, 1000)
 
-  second.style.transform = `rotate(${secondDegree}deg)`;
-  minute.style.transform = `rotate(${minuteDegree}deg)`;
-  hour.style.transform = `rotate(${hourDegree}deg)`;
-}
-
-setInterval(setDate,1000);
+// console.log(currentTime.getMinutes())

@@ -10,5 +10,3 @@ setInterval(() => {
   min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes(); //get minute
   sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds(); //get second
 }, 1000)
-
-// console.log(currentTime.getMinutes())
